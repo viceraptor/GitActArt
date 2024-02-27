@@ -6,16 +6,15 @@ env:
   FILE_NAME: hello-artifact
 
 jobs:
-  build:
-    name: Build
+  main:
     runs-on: ubuntu-latest
     steps:
 
     - name: Check out code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v2
       with:
-        name: linux
-        path: ./${{ env.FILE_NAME }}
+        name: ${{ env.FILE_NAME }}
+        path: .
